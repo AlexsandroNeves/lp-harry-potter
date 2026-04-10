@@ -1,4 +1,4 @@
-# ⚡ Harry Potter — Characters Encyclopedia
+#  Harry Potter — Characters Encyclopedia
 
 Enciclopédia de personagens do universo Harry Potter, construída com **React + TypeScript + Vite**, consumindo a [HP API](https://hp-api.onrender.com).
 
