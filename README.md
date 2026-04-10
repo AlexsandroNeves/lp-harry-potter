@@ -1,4 +1,4 @@
-#  Harry Potter — Characters Encyclopedia
+# ⚡ Harry Potter — Characters Encyclopedia
 
 Enciclopédia de personagens do universo Harry Potter, construída com **React + TypeScript + Vite**, consumindo a [HP API](https://hp-api.onrender.com).
 
@@ -73,8 +73,15 @@ npm run preview
 
 ## 🔌 API
 
-Os dados são fornecidos pela **[HP API](https://hp-api.onrender.com)**
+Os dados são fornecidos pela **[HP API](https://hp-api.onrender.com)**, uma API pública e gratuita sobre o universo Harry Potter.
 
+Toda comunicação com a API está centralizada em `src/services/characterService.ts`:
+
+```ts
+import { characterService } from './services/characterService';
+
+const characters = await characterService.getAll();
+```
 
 **Endpoint utilizado:**
 
