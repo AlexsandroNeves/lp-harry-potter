@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  padding: $space-2xl 0;
+  flex-wrap: wrap;
+}
+
+.btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 $space-sm;
+  border-radius: $radius-sm;
+  font-family: $font-heading;
+  font-size: 0.9rem;
+  color: $color-silver;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  transition: all $transition-fast;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+
+  &:hover:not(:disabled):not(.active) {
+    border-color: $color-gold-dark;
+    color: $color-gold;
+    background: rgba($color-gold, 0.06);
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &.active {
+    background: rgba($color-gold-dark, 0.2);
+    border-color: $color-gold-dark;
+    color: $color-gold;
+    font-weight: 600;
+    box-shadow: 0 0 16px rgba($color-gold, 0.15);
+  }
+
+  &.arrow {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  color: $color-silver-dim;
+  font-size: 1rem;
+  user-select: none;
+}

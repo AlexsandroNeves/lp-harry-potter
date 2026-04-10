@@ -1,0 +1,51 @@
+// ─── Color Palette ───────────────────────────────────────────────
+$color-bg:           #0a0a0f;
+$color-bg-card:      #12121a;
+$color-bg-card-hover:#1a1a28;
+$color-border:       rgba(255, 210, 90, 0.15);
+$color-border-hover: rgba(255, 210, 90, 0.45);
+
+$color-gold:         #ffd25a;
+$color-gold-light:   #ffe99a;
+$color-gold-dark:    #c9a227;
+$color-silver:       #c8d0e0;
+$color-silver-dim:   #7a8499;
+$color-white:        #f5f0e8;
+
+$color-gryffindor:   #740001;
+$color-slytherin:    #1a472a;
+$color-ravenclaw:    #0e1a40;
+$color-hufflepuff:   #ecb939;
+
+// ─── House Accent Map ─────────────────────────────────────────────
+$house-colors: (
+  "Gryffindor": ($color-gryffindor, #d3a429),
+  "Slytherin":  ($color-slytherin,  #5d9b68),
+  "Ravenclaw":  ($color-ravenclaw,  #6090c8),
+  "Hufflepuff": (#3d3000,           $color-hufflepuff),
+);
+
+// ─── Typography ───────────────────────────────────────────────────
+$font-display:  'Cinzel Decorative', serif;
+$font-heading:  'Cinzel', serif;
+$font-body:     'EB Garamond', serif;
+$font-ui:       'Cormorant Garamond', serif;
+
+// ─── Spacing ──────────────────────────────────────────────────────
+$space-xs:   4px;
+$space-sm:   8px;
+$space-md:   16px;
+$space-lg:   24px;
+$space-xl:   40px;
+$space-2xl:  64px;
+$space-3xl:  96px;
+
+// ─── Borders & Radius ─────────────────────────────────────────────
+$radius-sm:  6px;
+$radius-md:  12px;
+$radius-lg:  20px;
+
+// ─── Transitions ──────────────────────────────────────────────────
+$transition-fast:   0.2s ease;
+$transition-mid:    0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-slow:   0.6s cubic-bezier(0.25, 0.8, 0.25, 1);

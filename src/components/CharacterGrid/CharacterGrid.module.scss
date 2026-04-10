@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+
+.section {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 $space-xl;
+
+  @media (max-width: 600px) {
+    padding: 0 $space-md;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: $space-lg;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-md;
+  }
+
+  > div {
+    animation: fadeInUp 0.5s ease both;
+  }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Loading / Error states
+.stateCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+  padding: $space-3xl 0;
+  min-height: 300px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid $color-border;
+  border-top-color: $color-gold;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.stateIcon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba($color-gold, 0.4));
+}
+
+.stateText {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  color: $color-silver;
+  letter-spacing: 0.05em;
+}
+
+.stateSubText {
+  font-family: $font-body;
+  font-size: 0.9rem;
+  color: $color-silver-dim;
+  font-style: italic;
+}

@@ -1,0 +1,208 @@
+@use '../../styles/variables' as *;
+
+.card {
+  position: relative;
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition-mid, border-color $transition-mid, box-shadow $transition-mid;
+  animation: fadeInUp 0.5s ease both;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $color-border-hover;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba($color-gold, 0.08);
+
+    .clickHint { opacity: 1; }
+    .image { transform: scale(1.05); }
+  }
+
+  // House top border
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  &.gryffindor::before { background: linear-gradient(90deg, $color-gryffindor, #d3a429); }
+  &.slytherin::before  { background: linear-gradient(90deg, $color-slytherin, #5d9b68); }
+  &.ravenclaw::before  { background: linear-gradient(90deg, $color-ravenclaw, #6090c8); }
+  &.hufflepuff::before { background: linear-gradient(90deg, #3d3000, $color-hufflepuff); }
+  &.noHouse::before    { background: linear-gradient(90deg, #333, #666); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// Status badge
+.statusBadge {
+  position: absolute;
+  top: $space-md;
+  right: $space-md;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: $font-ui;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+
+  &.alive {
+    background: rgba(30, 80, 40, 0.85);
+    color: #7dde9a;
+    border: 1px solid rgba(80, 180, 100, 0.3);
+  }
+  &.deceased {
+    background: rgba(70, 10, 10, 0.85);
+    color: #e07070;
+    border: 1px solid rgba(180, 50, 50, 0.3);
+  }
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+// Click hint overlay
+.clickHint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background: linear-gradient(transparent, rgba($color-gold-dark, 0.18));
+  color: $color-gold-light;
+  font-family: $font-ui;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: $space-sm;
+  opacity: 0;
+  transition: opacity $transition-fast;
+  pointer-events: none;
+}
+
+// Image
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1a1a28, #0d0d18);
+}
+
+.imageBorder {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent 60%, $color-bg-card 100%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform $transition-slow;
+}
+
+.houseEmblem {
+  position: absolute;
+  bottom: $space-sm;
+  left: $space-sm;
+  z-index: 3;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+// Info section
+.info {
+  padding: $space-md $space-lg $space-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  flex: 1;
+}
+
+.name {
+  font-family: $font-heading;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $color-gold-light;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.housePill {
+  display: inline-block;
+  font-family: $font-ui;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 20px;
+  align-self: flex-start;
+  font-weight: 500;
+
+  &.gryffindor { background: rgba($color-gryffindor, 0.3); color: #e08060; border: 1px solid rgba($color-gryffindor, 0.5); }
+  &.slytherin  { background: rgba($color-slytherin, 0.3);  color: #70c080; border: 1px solid rgba($color-slytherin, 0.5); }
+  &.ravenclaw  { background: rgba($color-ravenclaw, 0.3);  color: #80a0e0; border: 1px solid rgba($color-ravenclaw, 0.5); }
+  &.hufflepuff { background: rgba(#3d3000, 0.5);            color: $color-hufflepuff; border: 1px solid rgba($color-hufflepuff, 0.4); }
+  &.noHouse    { background: rgba(#444, 0.3);               color: $color-silver-dim; border: 1px solid rgba(#666, 0.3); }
+}
+
+// Details
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: $space-xs;
+  border-top: 1px solid $color-border;
+  padding-top: $space-sm;
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: $space-xs;
+  align-items: baseline;
+}
+
+.detailLabel {
+  font-family: $font-ui;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-silver-dim;
+}
+
+.detailValue {
+  font-family: $font-body;
+  font-size: 0.88rem;
+  color: $color-silver;
+  line-height: 1.4;
+  word-break: break-word;
+}

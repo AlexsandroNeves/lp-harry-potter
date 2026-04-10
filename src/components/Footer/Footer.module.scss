@@ -1,0 +1,175 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  position: relative;
+  margin-top: $space-3xl;
+  background: linear-gradient(180deg, transparent, rgba($color-gold-dark, 0.06));
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $color-gold-dark, $color-gold, $color-gold-dark, transparent);
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+  margin-bottom: $space-2xl;
+}
+
+.dividerLine {
+  display: block;
+  height: 1px;
+  width: clamp(60px, 15vw, 200px);
+  background: linear-gradient(90deg, transparent, $color-gold-dark);
+
+  &:last-child {
+    background: linear-gradient(270deg, transparent, $color-gold-dark);
+  }
+}
+
+.dividerIcon {
+  color: $color-gold;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.footerInner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 $space-xl $space-2xl;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.brandSymbol {
+  font-size: 2rem;
+  color: $color-gold;
+  filter: drop-shadow(0 0 8px rgba($color-gold, 0.6));
+}
+
+.brandName {
+  font-family: $font-heading;
+  font-size: 1.1rem;
+  color: $color-gold-light;
+  letter-spacing: 0.05em;
+}
+
+.brandDesc {
+  font-family: $font-body;
+  font-size: 0.85rem;
+  color: $color-silver-dim;
+  font-style: italic;
+
+  a {
+    color: $color-gold-dark;
+    transition: color $transition-fast;
+
+    &:hover { color: $color-gold; }
+  }
+}
+
+.houses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-md;
+}
+
+.housesLabel {
+  font-family: $font-heading;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $color-silver-dim;
+}
+
+.houseList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+  width: 100%;
+  max-width: 180px;
+}
+
+.houseItem {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  font-family: $font-ui;
+  font-size: 0.95rem;
+  color: $color-silver;
+  padding: $space-xs $space-sm;
+  border-radius: $radius-sm;
+  border-left: 2px solid transparent;
+  transition: all $transition-fast;
+
+  &.gryffindor { border-color: $color-gryffindor; }
+  &.slytherin  { border-color: #2d7a43; }
+  &.ravenclaw  { border-color: #4070b0; }
+  &.hufflepuff { border-color: $color-hufflepuff; }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $space-sm;
+}
+
+.quoteText {
+  font-family: $font-body;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: $color-silver;
+  line-height: 1.8;
+  border-left: 2px solid $color-gold-dark;
+  padding-left: $space-md;
+
+  @media (max-width: 768px) {
+    border-left: none;
+    border-top: 2px solid $color-gold-dark;
+    padding-left: 0;
+    padding-top: $space-md;
+  }
+}
+
+.quoteAuthor {
+  font-family: $font-heading;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: $color-gold-dark;
+  text-transform: uppercase;
+}
+
+.bottom {
+  border-top: 1px solid $color-border;
+  padding: $space-md $space-xl;
+  text-align: center;
+
+  p {
+    font-family: $font-ui;
+    font-size: 0.8rem;
+    color: $color-silver-dim;
+    letter-spacing: 0.05em;
+  }
+}

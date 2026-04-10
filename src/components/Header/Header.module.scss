@@ -1,0 +1,113 @@
+@use '../../styles/variables' as *;
+
+.header {
+  position: relative;
+  text-align: center;
+  padding: $space-3xl $space-xl $space-xl;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba($color-gold-dark, 0.12) 0%, transparent 70%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $color-gold, $color-gold-dark, $color-gold, transparent);
+  }
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xl;
+  margin-bottom: $space-lg;
+}
+
+.crest {
+  flex-shrink: 0;
+}
+
+.crestSymbol {
+  font-size: 2.5rem;
+  color: $color-gold;
+  display: block;
+  opacity: 0.7;
+  animation: floatGlow 4s ease-in-out infinite;
+
+  &:nth-child(1) { animation-delay: -2s; }
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 8px rgba($color-gold, 0.6));
+  }
+  50% {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 0 18px rgba($color-gold, 1));
+  }
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.eyebrow {
+  font-family: $font-ui;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $color-silver-dim;
+  font-style: italic;
+}
+
+.title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: $color-gold;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-shadow:
+    0 0 40px rgba($color-gold, 0.4),
+    0 2px 0 rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-family: $font-heading;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: $color-silver;
+  font-weight: 400;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+  margin-top: $space-lg;
+}
+
+.dividerLine {
+  display: block;
+  height: 1px;
+  width: clamp(60px, 15vw, 200px);
+  background: linear-gradient(90deg, transparent, $color-gold-dark);
+
+  &:last-child {
+    background: linear-gradient(270deg, transparent, $color-gold-dark);
+  }
+}
+
+.dividerIcon {
+  color: $color-gold;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
