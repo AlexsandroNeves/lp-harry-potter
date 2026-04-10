@@ -223,6 +223,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: $space-sm $space-lg;
+   @media (max-width: 480px) {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
+  }
 }
 
 .row {

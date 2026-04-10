@@ -84,7 +84,9 @@
     color: $color-gold-dark;
     transition: color $transition-fast;
 
-    &:hover { color: $color-gold; }
+    &:hover {
+      color: $color-gold;
+    }
   }
 }
 
@@ -115,7 +117,7 @@
   display: flex;
   align-items: center;
   gap: $space-sm;
-  font-family: $font-ui;
+  // font-family: $font-ui;
   font-size: 0.95rem;
   color: $color-silver;
   padding: $space-xs $space-sm;
@@ -123,10 +125,21 @@
   border-left: 2px solid transparent;
   transition: all $transition-fast;
 
-  &.gryffindor { border-color: $color-gryffindor; }
-  &.slytherin  { border-color: #2d7a43; }
-  &.ravenclaw  { border-color: #4070b0; }
-  &.hufflepuff { border-color: $color-hufflepuff; }
+  &.gryffindor {
+    border-color: $color-gryffindor;
+  }
+
+  &.slytherin {
+    border-color: #2d7a43;
+  }
+
+  &.ravenclaw {
+    border-color: #4070b0;
+  }
+
+  &.hufflepuff {
+    border-color: $color-hufflepuff;
+  }
 }
 
 .quote {
@@ -167,7 +180,7 @@
   text-align: center;
 
   p {
-    font-family: $font-ui;
+    // font-family: $font-ui;
     font-size: 0.8rem;
     color: $color-silver-dim;
     letter-spacing: 0.05em;

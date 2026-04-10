@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.bottom}>
-        <p>© {new Date().getFullYear()} · Desenvolvido com React &amp; SCSS · Dados via HP API</p>
+        <p>© {new Date().getFullYear()} · Desenvolvido  por Alexsandro Das Neves</p>
       </div>
     </footer>
   );

@@ -5,9 +5,8 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.headerInner}>
         <div className={styles.titleBlock}>
-          <span className={styles.eyebrow}>The Wizarding World</span>
           <h1 className={styles.title}>Harry Potter</h1>
-          <p className={styles.subtitle}>Characters Encyclopedia</p>
+          <p className={styles.subtitle}>Todos os personagens</p>
         </div>
       </div>
 

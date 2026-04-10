@@ -189,6 +189,10 @@
   grid-template-columns: 90px 1fr;
   gap: $space-xs;
   align-items: baseline;
+
+  @media (max-width: 600px) {
+    grid-template-columns: none;
+  }
 }
 
 .detailLabel {
